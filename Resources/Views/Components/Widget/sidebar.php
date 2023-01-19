@@ -27,9 +27,4 @@ class sidebar extends Component {
         array_push($this->menuItems, $menuItems);
         return $menuItems;
     }
-
-    public function getChildren($parent_id = null) {
-        $menu = Menu::where('title', $this->menu)->firstOrFail();
-        $menuItems = MenuItem::where('parent_id', $parent_id)->get();
-    }
 }
